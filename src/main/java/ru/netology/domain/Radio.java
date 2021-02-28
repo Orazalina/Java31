@@ -25,16 +25,16 @@ public class Radio {
         this.currentVolume = currentVolume;
     }
 
-    public int changeTheNumberOfTheRadioStation(int intendedStation) {
-        if (intendedStation <= 9 && intendedStation >= 0) {
-            currentNumberRadioStation = intendedStation;
+    public int changeTheNumberOfTheRadioStation(int internedStation) {
+        if (internedStation <= maxNumberRadioStation && internedStation >= minNumberRadioStation) {
+            currentNumberRadioStation = internedStation;
         }
         return currentNumberRadioStation;
     }
 
     public void changeTheStationByNextButton() {
         if (currentNumberRadioStation == maxNumberRadioStation) {
-            currentNumberRadioStation = 0;
+            currentNumberRadioStation = minNumberRadioStation;
         } else {
             currentNumberRadioStation += 1;
         }
@@ -42,7 +42,7 @@ public class Radio {
 
     public void changeTheStationByPrevButton() {
         if (currentNumberRadioStation == minNumberRadioStation) {
-            currentNumberRadioStation = 9;
+            currentNumberRadioStation = maxNumberRadioStation;
         } else {
             currentNumberRadioStation -= 1;
         }
