@@ -20,7 +20,7 @@ class RadioTest {
     @Test
     void changeTheStationByButtonNextAfterNine() {
         Radio radio = new Radio();
-        radio.setCurrentNumberRadioStation(9);
+        radio.setCurrentNumberRadioStation(10);
         radio.changeTheStationByNextButton();
         assertEquals(0, radio.getCurrentNumberRadioStation());
     }
@@ -30,7 +30,7 @@ class RadioTest {
         Radio radio = new Radio();
         radio.setCurrentNumberRadioStation(0);
         radio.changeTheStationByPrevButton();
-        assertEquals(9, radio.getCurrentNumberRadioStation());
+        assertEquals(10, radio.getCurrentNumberRadioStation());
     }
 
     @Test
@@ -56,9 +56,9 @@ class RadioTest {
     @Test
     void volumeAboveMax() {
         Radio radio = new Radio();
-        radio.setCurrentVolume(10);
+        radio.setCurrentVolume(100);
         radio.increaseVolume();
-        assertEquals(10, radio.getCurrentVolume());
+        assertEquals(100, radio.getCurrentVolume());
     }
 
     @Test
